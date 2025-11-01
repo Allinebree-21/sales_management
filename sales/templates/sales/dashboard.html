@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📊 Sales Dashboard</title>
     <style>
         body {
@@ -10,6 +12,21 @@
         }
         h1 {
             color: #333;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 8px 14px;
+            border-radius: 6px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #0056b3;
         }
         table {
             width: 100%;
@@ -35,6 +52,15 @@
     </style>
 </head>
 <body>
+
+    <!-- 🔹 Navigation Bar -->
+    <nav>
+        <a href="/" style="margin-right: 15px;">🏠 Home</a>
+        <a href="/admin/" target="_blank" style="margin-right: 15px;">⚙️ Admin Panel</a>
+        <a href="/sales/" style="margin-right: 15px;">📊 Dashboard</a>
+    </nav>
+
+    <!-- 🔹 Dashboard Content -->
     <h1>📊 Sales Dashboard</h1>
 
     <h2>Sales Data</h2>
@@ -57,10 +83,12 @@
         {% endfor %}
     </table>
 
+    <!-- 🔹 Summary Section -->
     <div class="summary">
         <h3>💰 Summary</h3>
         <p><strong>Total Sales Amount:</strong> Ksh {{ total_sales|floatformat:2 }}</p>
         <p><strong>Estimated Profit (30%):</strong> Ksh {{ profit|floatformat:2 }}</p>
     </div>
+
 </body>
 </html>
